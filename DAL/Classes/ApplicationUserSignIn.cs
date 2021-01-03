@@ -11,10 +11,20 @@ namespace DAL.Classes
         public ApplicationUserSignIn(ApplicationUserManagment applicationUserManager, IAuthenticationManager authenticationManager)
             : base(applicationUserManager, authenticationManager)
         {
-            ApplicationUserManager = applicationUserManager;
+            SetApplicationUserManager(applicationUserManager);
         }
 
-        public new ApplicationUserManagment ApplicationUserManager { get; set; }
+        private ApplicationUserManagment applicationUserManager;
+
+        public ApplicationUserManagment GetApplicationUserManager()
+        {
+            return applicationUserManager;
+        }
+
+        public void SetApplicationUserManager(ApplicationUserManagment value)
+        {
+            applicationUserManager = value;
+        }
 
         //public override Task<ClaimsIdentity> CreateUserIdentityAsync(ApplicationUser user)
         //{
