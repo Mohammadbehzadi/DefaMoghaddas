@@ -1,0 +1,4 @@
+﻿For Membership:
+	Enable-Migrations -ContextTypeName DAL.DataContexts.AppIdentityDbContext -MigrationsDirectory:AppIdentityDbMigration
+	Add-Migration -StartUpProjectName DAL -configuration DAL.AppIdentityDbMigration.Configuration Initialized
+	Update-Database -StartUpProjectName DAL -configuration DAL.AppIdentityDbMigration.Configuration -Verbose
