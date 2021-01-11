@@ -8,10 +8,9 @@ namespace Data.Domain.ViewModels
 {
     public class ExternalLoginConfirmationViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Required(ErrorMessage = "{0} را وارد کنید")]
+        [Display(Name = "نام کاربری")]
+        public string UserName { get; set; }
     }
 
     public class ExternalLoginListViewModel
@@ -22,77 +21,81 @@ namespace Data.Domain.ViewModels
 
     public class ManageUserViewModel
     {
-        [Required]
+        [Required(ErrorMessage = "{0} را وارد کنید")]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [Display(Name = "کلمه عبور فعلی")]
         public string OldPassword { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [Required(ErrorMessage = "{0} را وارد کنید")]
+        [StringLength(100, ErrorMessage = "{0} باید از 6 حرف یا عدد بیشتر باشد", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [Display(Name = "کلمه عبور جدید")]
         public string NewPassword { get; set; }
 
+        [Required(ErrorMessage = "{0} را وارد کنید")]
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
-        [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
+        [Display(Name = "تکرار کلمه عبور جدید")]
+        [Compare("NewPassword", ErrorMessage = "کلمه عبور جدید با تکرار کلمه عبور جدید مطابقت ندارد.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class LoginViewModel
     {
         [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
+        [Display(Name = "نام کاربری :")]
+        public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "کلمه عبور :")]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [Display(Name = "مرا بخاطر بسپار")]
         public bool RememberMe { get; set; }
     }
 
     public class RegisterViewModel
     {
         [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "نام کاربری :")]
+        public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "آدرس الکترونیکی :")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "توجه: {0} باید از {1} حرف یا عدد بیشتر باشد", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "کلمه عبور :")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "تایید کلمه عبور :")]
+        [Compare("Password", ErrorMessage = "کلمه عبور جدید با تکرار کلمه عبور جدید مطابقت ندارد.")]
         public string ConfirmPassword { get; set; }
     }
 
     public class ResetPasswordViewModel
     {
         [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
+        [Display(Name = "نام کاربری :")]
+        public string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "آدرس الکترونیکی :")]
         public string Email { get; set; }
 
         [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
+        [StringLength(100, ErrorMessage = "توجه: {0} باید از {1} حرف یا عدد بیشتر باشد", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [Display(Name = "کلمه عبور :")]
         public string Password { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [Display(Name = "تایید کلمه عبور :")]
+        [Compare("Password", ErrorMessage = "کلمه عبور جدید با تکرار کلمه عبور جدید مطابقت ندارد.")]
         public string ConfirmPassword { get; set; }
-
-        public string Code { get; set; }
     }
 
     public class ForgotPasswordViewModel

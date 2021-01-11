@@ -19,7 +19,7 @@ namespace DAL.DataContexts
             return new AppIdentityDbContext();
         }
 
-        public DbSet<Person> Branchs { get; set; }
+        public DbSet<Person> Person { get; set; }
         public DbSet<Permissions> Permissions { get; set; }
         public DbSet<ActionLog> ActionLogs { get; set; }
         public DbSet<PermissionsRoles> PermissionsRoles { get; set; }
