@@ -1,7 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DAL.DataContexts;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Operations.Interfaces;
+using System.Data.Entity.Migrations;
 using System.Linq;
-using System.Web;
 
 namespace Operations.Immplements
 {

@@ -7,7 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using System;
-using DefaMoghaddas.Comon;
+using DefaMoghaddas.Common;
 using DAL.Classes;
 using Operations.Interfaces;
 using System.Data.Entity;
