@@ -22,10 +22,5 @@ namespace Data.Domain.Entities
             // Add custom user claims here
             return userIdentity;
         }
-
-        public Task<ClaimsIdentity[]> GenerateUserIdentityAsync(ApplicationUser userManager)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

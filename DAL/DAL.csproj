@@ -55,8 +55,8 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
-      <HintPath>..\packages\BouncyCastle.1.8.6.1\lib\BouncyCastle.Crypto.dll</HintPath>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.9.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
+      <HintPath>..\packages\BouncyCastle.1.8.9\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -109,6 +109,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppIdentityDbMigration\202101212044567_Initialized1.cs" />
+    <Compile Include="AppIdentityDbMigration\202101212044567_Initialized1.designer.cs">
+      <DependentUpon>202101212044567_Initialized1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Classes\ApplicationUserManagment.cs" />
     <Compile Include="Classes\ApplicationUserSignIn.cs" />
     <Compile Include="DataContexts\AppIdentityDbContext.cs" />
@@ -130,6 +134,11 @@
       <Project>{e5150ef2-11dd-4cff-a51b-572d7e24b62c}</Project>
       <Name>Data.Domain</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AppIdentityDbMigration\202101212044567_Initialized1.resx">
+      <DependentUpon>202101212044567_Initialized1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -7,7 +7,7 @@ namespace DAL.DataContexts
     public class AppIdentityDbContext : IdentityDbContext<ApplicationUser>
     {
         public AppIdentityDbContext()
-            : base("DefaultConnection")
+            : base("DefaConnection")
         {
             Configuration.LazyLoadingEnabled = true;
             Configuration.ProxyCreationEnabled = false;
